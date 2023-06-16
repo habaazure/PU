@@ -11,7 +11,7 @@ pool:
   demands:
   - agent.name -equals az400mlab-vm0
 
-- task: NuGetToolInstaller@1
+  task: NuGetToolInstaller@1
   inputs:
     versionSpec: 4.0.0
     
