@@ -7,7 +7,9 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  name: az400mlab-pool1
+  demands:
+  - agent.name -equals az400mlab-vm0
 
 steps:
 - script: echo Hello, world!
