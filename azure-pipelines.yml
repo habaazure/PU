@@ -17,6 +17,4 @@ jobs:
     - agent.name -equals MMD5CG20976RX
   steps:
   - script: echo hello from Windows
-
-- job: Terraform initialization
- - script: C:\Terraform\terraform.exe -init
+  - script: C:\Terraform\terraform.exe -init
