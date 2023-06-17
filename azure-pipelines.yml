@@ -18,7 +18,7 @@ jobs:
       - script: echo hello from Windows
 
       #- task: TerraformTaskV1@0
-        inputs:
+       # inputs:
           provider: "azurerm"
           command: "init"
           workingDirectory: "$(System.DefaultWorkingDirectory)"
