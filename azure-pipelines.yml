@@ -17,4 +17,7 @@ jobs:
     - agent.name -equals MMD5CG20976RX
   steps:
   - script: echo hello from Windows
-  - script: mkdir hasmakedir
+  
+  # variables
+  terraformWorkingDirectory: '$(System.DefaultWorkingDirectory)/samples/integration-testing/src'
+  terraformVersion: ">= 0.14.0"
