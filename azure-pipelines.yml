@@ -23,3 +23,4 @@ jobs:
           command: "init"
           workingDirectory: "$(System.DefaultWorkingDirectory)"
           environmentServiceName: "Azure-SP-connect"
+          #end
