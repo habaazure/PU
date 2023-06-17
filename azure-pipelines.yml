@@ -18,4 +18,9 @@ jobs:
   steps:
   - script: echo hello from Windows
   
-  
+  - task: TerraformTaskV1@0
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    workingDirectory: '$(System.DefaultWorkingDirectory)'
+    environmentServiceName: 'Azure-SP-connect'
