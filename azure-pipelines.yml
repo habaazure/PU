@@ -21,6 +21,6 @@ jobs:
   - task: TerraformTaskV1@0
   inputs:
     provider: 'azurerm'
-    command: 'apply'
+    command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
     environmentServiceName: 'Azure-SP-connect'
