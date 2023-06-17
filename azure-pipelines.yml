@@ -19,7 +19,7 @@ jobs:
   - script: echo hello from Windows
 
   # Tasks
-jobs:
+jobs1:
 - job1: Terraform
   pool:
     name: az400mlab-pool1
