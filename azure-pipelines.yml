@@ -21,6 +21,6 @@ jobs:
         inputs:
           provider: "azurerm"
           command: "init"
-          workingDirectory: "C:\Terraform"
+          workingDirectory: 'C:\Terraform'
           environmentServiceName: "Azure-SP-connect"
           #end1
