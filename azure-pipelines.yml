@@ -18,9 +18,7 @@ jobs:
   steps:
   - script: echo hello from Windows
 
-  # Tasks
-jobs1:
-- job1: Terraform
+- job: Terraform
   pool:
     name: az400mlab-pool1
     demands: 
