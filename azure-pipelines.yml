@@ -1,0 +1,8 @@
+jobs:
+- job: Windows
+  pool:
+    name: az400mlab-pool1
+    demands: 
+    - agent.name -equals MMD5CG20976RX
+  steps:
+  - script: echo hello from Windows
