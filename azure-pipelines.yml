@@ -18,10 +18,30 @@ jobs:
   steps:
   - script: echo hello from Windows
 
-- job: Terraform
-  pool:
-    name: az400mlab-pool1
-    demands: 
-    - agent.name -equals MMD5CG20976RX
-  steps:
-  - script: terraform init
+  - bash: $(terraformWorkingDirectory)/checkov.sh $(terraformWorkingDirectory)
+  displayName: Checkov Static Code Analysis
+
+  - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
+  displayName: 'Install Terraform'
+  inputs:
+    terraformVersion: $(terraformVersion)
+
+ - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
+  displayName: 'Run terraform init'
+  inputs:
+    command: init
+    workingDirectory: $(terraformWorkingDirectory)
+
+   - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
+  displayName: 'Run terraform validate'
+  inputs:
+    command: validate
+    workingDirectory: $(terraformWorkingDirectory)
+
+       - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
+  displayName: 'Run terraform plan'
+  inputs:
+    command: plan
+    workingDirectory: $(terraformWorkingDirectory)
+    environmentServiceName: $(serviceConnection)
+    commandOptions: -var location=$(azureLocation)
