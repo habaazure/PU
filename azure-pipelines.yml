@@ -2,25 +2,24 @@
 trigger:
   branches:
     include:
-    - main
-    - azure-pipelines
+      - main
+      - azure-pipelines
     exclude:
-    - releases/old*
-
+      - releases/old*
 
 # Tasks
 jobs:
-- job: Windows
-  pool:
-    name: az400mlab-pool1
-    demands: 
-    - agent.name -equals MMD5CG20976RX
-  steps:
-  - script: echo hello from Windows
-  
-  - task: TerraformTaskV1@0
-  inputs:
-    provider: 'azurerm'
-    command: 'init'
-    workingDirectory: '$(System.DefaultWorkingDirectory)'
-    environmentServiceName: 'Azure-SP-connect'
+  - job: Windows
+    pool:
+      name: az400mlab-pool1
+      demands:
+        - agent.name -equals MMD5CG20976RX
+    steps:
+      - script: echo hello from Windows
+
+      - task: TerraformTaskV1@0
+        inputs:
+          provider: "azurerm"
+          command: "init"
+          workingDirectory: "$(System.DefaultWorkingDirectory)"
+          environmentServiceName: "Azure-SP-connect"
