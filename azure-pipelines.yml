@@ -20,7 +20,7 @@ jobs:
 
   # Tasks
 jobs:
-- job: Terraform
+- job1: Terraform
   pool:
     name: az400mlab-pool1
     demands: 
