@@ -18,6 +18,6 @@ jobs:
   steps:
   - script: echo hello from Windows
   
-  # variables
+  variables:
   terraformWorkingDirectory: '$(System.DefaultWorkingDirectory)/samples/integration-testing/src'
   terraformVersion: ">= 0.14.0"
