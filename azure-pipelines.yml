@@ -1,3 +1,14 @@
+# specific branch build Trigger
+trigger:
+  branches:
+    include:
+    - main
+    - azure-pipelines/*
+    exclude:
+    - releases/old*
+
+
+# Tasks
 jobs:
 - job: Windows
   pool:
