@@ -6,8 +6,6 @@ jobs:
     - agent.name -equals MMD5CG20976RX
   steps:
   - script: echo hello from Windows
-
-jobs:
 - task: TerraformTaskV4@4
   inputs:
     provider: 'azurerm'
