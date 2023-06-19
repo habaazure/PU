@@ -8,8 +8,7 @@ jobs:
   - script: echo hello from Windows
   
   - task: TerraformTaskV4@4
-  inputs:
-    provider: 'azurerm'
+      provider: 'azurerm'
     command: 'init'
     backendServiceArm: 'azhabasubscribe01-sp'
     backendAzureRmResourceGroupName: 'az400-vig'
