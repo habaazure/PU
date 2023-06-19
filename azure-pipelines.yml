@@ -6,7 +6,6 @@ trigger:
     exclude:
       - releases/old*
 jobs:
-<<<<<<< HEAD
   - job: Windows
     pool:
       name: az400mlab-pool1
