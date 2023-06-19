@@ -7,8 +7,8 @@ jobs:
   steps:
   - script: echo hello from Windows
 
-- job: TerraformTaskV4@4
-- task:
+- job: TF
+- task: TerraformTaskV4@4
   inputs:
     provider: 'azurerm'
     command: 'init'
