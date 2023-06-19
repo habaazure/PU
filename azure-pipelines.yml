@@ -6,11 +6,13 @@ trigger:
     exclude:
       - releases/old*
 jobs:
-  - task: TerraformTaskV4@4
-    inputs: null
-    provider: azurerm
-    command: init
-    backendServiceArm: azhabasubscribe01-sp
-    backendAzureRmResourceGroupName: az400-vig
-    backendAzureRmStorageAccountName: hasstr01
-    backendAzureRmContainerName: hasstrcont
+    - job: TerraformInit
+    steps:
+      - task: TerraformTaskV4@4
+        inputs: null
+        provider: azurerm
+        command: init
+        backendServiceArm: azhabasubscribe01-sp
+        backendAzureRmResourceGroupName: az400-vig
+        backendAzureRmStorageAccountName: hasstr01
+        backendAzureRmContainerName: hasstrcont
