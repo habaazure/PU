@@ -17,14 +17,10 @@ jobs:
     steps:
       - script: echo hello from Windows
 
-    - task: TerraformInstaller@1
-        inputs:
-          terraformVersion: 'latest'
-    
-    - task: TerraformTaskV1@0
-        inputs:
-          provider: "azurerm"
-          command: "init"
-          workingDirectory: 'C:\Terraform'
-          environmentServiceName: "Azure-SP-connect"
-          #end2
+  - task: TerraformTaskV1@0
+    inputs:
+    provider: "azurerm"
+    command: "init"
+    workingDirectory: 'C:\Terraform'
+    environmentServiceName: "Azure-SP-connect"
+    #end2
