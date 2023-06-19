@@ -1,20 +1,24 @@
+trigger:
+  branches:
+    include:
+      - main
+      - azure-pipelines
+    exclude:
+      - releases/old*
 jobs:
-- job: Windows
-  pool:
-    name: az400mlab-pool1
-    demands: 
-    - agent.name -equals MMD5CG20976RX
-  steps:
-  - script: echo hello from Windows
-  
-  - job: TF
-  - task: TerraformTaskV4@4
-  inputs:
-    provider: 'azurerm'
-    command: 'init'
-    backendServiceArm: 'azhabasubscribe01-sp'
-    backendAzureRmResourceGroupName: 'az400-vig'
-    backendAzureRmStorageAccountName: 'hasstr01'
-    backendAzureRmContainerName: 'hasstrcont'
-    backendAzureRmKey: 'hJHfbYW2eou+0rhbRgKlnr8EOI5qWN9FCoCHnKfXcWVgWhz4vA2UsmVqdC7LUsgwd+y9FlD91mf1+ASt0COU2w=='
-
+  - job: Windows
+    pool:
+      name: az400mlab-pool1
+      demands:
+        - agent.name -equals MMD5CG20976RX
+    steps:
+      - script: echo hello from Windows
+      - task: TerraformTaskV4@4
+        inputs:
+          provider: 'azurerm'
+          command: 'init'
+          backendServiceArm: 'azhabasubscribe01-sp'
+          backendAzureRmResourceGroupName: 'az400-vig'
+          backendAzureRmStorageAccountName: 'hasstr01'
+          backendAzureRmContainerName: 'hasstrcont'
+          backendAzureRmKey: 'hJHfbYW2eou+0rhbRgKlnr8EOI5qWN9FCoCHnKfXcWVgWhz4vA2UsmVqdC7LUsgwd+y9FlD91mf1+ASt0COU2w=='
