@@ -1,4 +1,3 @@
-# specific branch build Trigger
 trigger:
   branches:
     include:
@@ -6,16 +5,12 @@ trigger:
       - azure-pipelines
     exclude:
       - releases/old*
-
-# Tasks
 jobs:
   - task: TerraformTaskV4@4
-    inputs:
-    provider: 'azurerm'
-    command: 'init'
-    backendServiceArm: 'azhabasubscribe01-sp'
-    backendAzureRmResourceGroupName: 'az400-vig'
-    backendAzureRmStorageAccountName: 'hasstr01'
-    backendAzureRmContainerName: 'hasstrcont'
-    backendAzureRmKey: 'hJHfbYW2eou+0rhbRgKlnr8EOI5qWN9FCoCHnKfXcWVgWhz4vA2UsmVqdC7LUsgwd+y9FlD91mf1+ASt0COU2w=='
-    #end3
+    inputs: null
+    provider: azurerm
+    command: init
+    backendServiceArm: azhabasubscribe01-sp
+    backendAzureRmResourceGroupName: az400-vig
+    backendAzureRmStorageAccountName: hasstr01
+    backendAzureRmContainerName: hasstrcont
