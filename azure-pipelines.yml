@@ -17,8 +17,8 @@ jobs:
     steps:
       - script: echo hello from Windows
 
-- task: TerraformTaskV4@4
-  inputs:
+  - task: TerraformTaskV4@4
+    inputs:
     provider: 'azurerm'
     command: 'init'
     backendServiceArm: 'azhabasubscribe01-sp'
