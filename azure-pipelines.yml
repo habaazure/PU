@@ -50,4 +50,5 @@ jobs:
         inputs:
           provider: 'azurerm'
           command: 'apply'
-          environmentServiceNameAzureRM: 'azhabasubscribe01-sp'             
+          environmentServiceNameAzureRM: 'azhabasubscribe01-sp'
+# end 1                       
