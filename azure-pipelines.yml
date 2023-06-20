@@ -21,4 +21,4 @@ jobs:
           backendAzureRmResourceGroupName: 'az400-vig'
           backendAzureRmStorageAccountName: 'hasstr01'
           backendAzureRmContainerName: 'hasstrcont'
-          backendAzureRmKey: 'hJHfbYW2eou+0rhbRgKlnr8EOI5qWN9FCoCHnKfXcWVgWhz4vA2UsmVqdC7LUsgwd+y9FlD91mf1+ASt0COU2w=='
+          backendAzureRmKey: 'WECkb3QTw3iBNr54SN2/avtmudECmHi99bQMfWEz5EfZVmQdDS59oJCmUiQfDN/gXf+0dxfx2qy6+AStQdAghg=='
