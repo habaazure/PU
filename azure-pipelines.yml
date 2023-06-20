@@ -22,3 +22,32 @@ jobs:
           backendAzureRmStorageAccountName: 'hasstr01'
           backendAzureRmContainerName: 'hasstrcont'
           backendAzureRmKey: 'WECkb3QTw3iBNr54SN2/avtmudECmHi99bQMfWEz5EfZVmQdDS59oJCmUiQfDN/gXf+0dxfx2qy6+AStQdAghg=='
+
+# Terraform validate
+       - task: TerraformTaskV4@4
+            inputs:
+              provider: 'azurerm'
+              command: 'validate'
+              
+# Terraform Plan
+        - task: TerraformTaskV4@4
+           inputs:
+             provider: 'azurerm'
+             command: 'plan'
+             environmentServiceNameAzureRM: 'azhabasubscribe01-sp'              
+
+# Terraform Show
+        - task: TerraformTaskV4@4
+           inputs:
+             provider: 'azurerm'
+             command: 'show'
+             outputTo: 'console'
+             outputFormat: 'default'
+             environmentServiceNameAzureRM: 'azhabasubscribe01-sp'
+
+# Terraform Apply
+                 - task: TerraformTaskV4@4
+           inputs:
+             provider: 'azurerm'
+             command: 'apply'
+             environmentServiceNameAzureRM: 'azhabasubscribe01-sp'             
